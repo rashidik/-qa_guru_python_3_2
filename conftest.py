@@ -1,13 +1,14 @@
-import pytest
 from selene.support.shared import browser
-from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
-
+import pytest
 
 @pytest.fixture()
-def set_webdriver():
-    browser.config.driver = webdriver.Chrome(ChromeDriverManager().install())
-    return browser.config.driver
+def set_browser_size_window():
+    browser.config.window_height = 720
+    browser.config.window_width = 1280
 
 @pytest.fixture()
-def open_browser():
+def open_browser(set_browser_size_window):
+    browser.open('https://google.com')
+
+
+
