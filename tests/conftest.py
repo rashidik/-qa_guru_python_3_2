@@ -3,7 +3,7 @@ import pytest
 
 @pytest.fixture()
 def set_browser_size_window():
-    browser.config.window_height = 720
+    browser.config.window_height = 1280
     browser.config.window_width = 1280
 
 @pytest.fixture()
